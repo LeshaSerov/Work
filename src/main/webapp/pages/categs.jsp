@@ -9,18 +9,7 @@
 </head>
 
 <body>
-<div>
-    <div>
-        <button onclick="location.href='/pharms'">Список аптек</button>
-        <button onclick="location.href='/preparats'">Список препаратов</button>
-        <button onclick="location.href='/categs'">Список категорий</button>
-    </div>
-    <div>
-        <button onclick="location.href='*'">Добавить аптеку</button>
-        <button onclick="location.href='*'">Добавить препарат</button>
-        <button onclick="location.href='*'">Добавить категорию</button>
-    </div>
-</div>
+
 <table class="table" title="Категории">
     <thead>
     <tr>

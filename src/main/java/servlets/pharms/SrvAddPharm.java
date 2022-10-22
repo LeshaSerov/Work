@@ -10,21 +10,19 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/pharms/edit")
-public class SrvEditPharm  extends HttpServlet {
+@WebServlet("/pharms/add")
+public class SrvAddPharm extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-        int id = Integer.parseInt(request.getParameter("id"));
         PrintWriter writer = response.getWriter();
         try {
-            writer.println("<form action=\"/pharms/edit?action=submit&id=" + id + "\" method=\"POST\">");
+            writer.println("<form action=\"/pharms/add?action=submit\" method=\"POST\">");
             writer.println(" Name: <input name=\"address\" />");
             writer.println("<input type=\"submit\" value=\"Submit\" />");
             writer.println("</form>");
-        }
-        finally {
+        } finally {
             writer.close();
         }
     }
@@ -32,8 +30,7 @@ public class SrvEditPharm  extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String address = request.getParameter("address");
-        Integer id = Integer.parseInt(request.getParameter("id"));
-        Imitator.editPharm(id, address);
+        Imitator.addPharm(address);
         response.sendRedirect("/pharms");
     }
 }

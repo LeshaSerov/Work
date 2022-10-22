@@ -5,14 +5,15 @@ import jakarta.websocket.OnClose;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 public interface Imitator {
 
     List<Pharm> pharmList = new ArrayList<>();
+    static void addPharm(String address){
+        Integer id = (int) Math.random()*100000;
+        pharmList.add(new Pharm(id, address));
+    }
     static void addPharm(Pharm pharm){
         pharmList.add(pharm);
     }
