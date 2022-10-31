@@ -3,6 +3,7 @@ package domain;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Setter
 @Getter
@@ -12,4 +13,5 @@ import java.io.Serializable;
 public class Categ implements Serializable{
     Integer id;
     String name;
+    List<Preparat> preparatList;
 }

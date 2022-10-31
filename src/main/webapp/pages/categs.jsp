@@ -9,24 +9,36 @@
 </head>
 
 <body>
+<div>
+    <div>
+        <button onclick="location.href='/pharms'">Список аптек</button>
+        <button onclick="location.href='/preparats'">Список препаратов</button>
+        <button onclick="location.href='/categs'">Список категорий</button>
+    </div>
+    <div>
+        <button onclick="location.href='/pharm/add'">Добавить аптеку</button>
+        <button onclick="location.href='preparat/add'">Добавить препарат</button>
+        <button onclick="location.href='categ/add'">Добавить категорию</button>
+    </div>
+</div>
+
+
 
 <table class="table" title="Категории">
     <thead>
     <tr>
         <th>ID</th>
+        <th colspan="3">Name</th>
     </tr>
     </thead>
     <tbody>
-    <%--    <%--%>
-    <%--        for (Categ categ : ) {--%>
-    <%--            out.println("<tr onclick=\"location.href='/*'\">");--%>
-    <%--            out.println("<td>" + categ.getId() + "</td>");--%>
-    <%--            out.println("<td>" + categ.getName() + "</td>");--%>
-    <%--            out.println("</tr>");--%>
-    <%--        }--%>
-    <%--    %>--%>
     <c:forEach items="${list}" var="item">
-
+        <tr onclick = "location.href='categ?id=${item.id}'" >
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+            <td><a href="categ/edit?id=${item.id}">Edit</a></td>
+            <td><a href="categ/delete?id=${item.id}">Delete</a></td>
+        </tr>
     </c:forEach>
     </tbody>
 </table>

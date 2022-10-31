@@ -1,6 +1,7 @@
 <%@page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -9,10 +10,9 @@
 <body>
 
 <%--<%=request.getAttribute("list")%>--%>
-
-<c:forEach var="item" items="${list}" >
-    ${item.number}
-</c:forEach>
+<%--<c:forEach var="item" items="${list}" >--%>
+<%--    ${item.number}--%>
+<%--</c:forEach>--%>
 
 <%--<%--%>
 <%--    List<TD> list = (List<TD>) request.getAttribute("list");--%>
@@ -30,9 +30,9 @@
         <button onclick="location.href='/categs'">Список категорий</button>
     </div>
     <div>
-        <button onclick="location.href='/pharms/add'">Добавить аптеку</button>
-        <button onclick="location.href='*'">Добавить препарат</button>
-        <button onclick="location.href='*'">Добавить категорию</button>
+        <button onclick="location.href='/pharm/add'">Добавить аптеку</button>
+        <button onclick="location.href='preparat/add'">Добавить препарат</button>
+        <button onclick="location.href='categ/add'">Добавить категорию</button>
     </div>
 </div>
 <%--<select id="selectID">--%>
