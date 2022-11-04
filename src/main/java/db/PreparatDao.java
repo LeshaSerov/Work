@@ -33,7 +33,7 @@ public class PreparatDao {
 
     public static Boolean editPreparat(Integer id, String name) {
         String SQL = """
-                   UPDATE preparats SET preparatname = ? WHERE preparatsid = ?;
+                   UPDATE preparats SET preparatsname = ? WHERE preparatsid = ?;
                 """;
         try (Connection connection = ConnectionPool.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
@@ -45,7 +45,7 @@ public class PreparatDao {
                 return false;
             }
         } catch (Exception exception) {
-            return null;
+            return false;
         }
     }
 
@@ -65,7 +65,7 @@ public class PreparatDao {
                 return false;
             }
         } catch (Exception exception) {
-            return null;
+            return false;
         }
     }
 

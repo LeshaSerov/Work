@@ -44,10 +44,9 @@ public class PharmDao {
                 return false;
             }
         } catch (Exception exception) {
-            return null;
+            return false;
         }
     }
-
 
     public static Boolean deletePharm(Integer idPharm) {
         String SQL = """
@@ -65,7 +64,7 @@ public class PharmDao {
                 return false;
             }
         } catch (Exception exception) {
-            return null;
+            return false;
         }
     }
 

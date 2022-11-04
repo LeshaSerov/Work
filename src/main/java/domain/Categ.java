@@ -7,11 +7,14 @@ import java.util.List;
 
 @Setter
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class Categ implements Serializable{
     Integer id;
     String name;
-    List<Preparat> preparatList;
+    List<Preparat> preparatList = null;
+
+    public Categ(Integer id, String name){
+        this.id = id;
+        this.name = name;
+    }
 }

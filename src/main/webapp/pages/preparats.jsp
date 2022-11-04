@@ -33,7 +33,7 @@
     </thead>
     <tbody>
     <c:forEach items="${list}" var="item">
-        <tr onclick = "location.href='preparat?id=${item.id}'" >
+        <tr onclick = "location.href='pharms_of_the_preparat?id=${item.id}'" >
             <td>${item.id}</td>
             <td>${item.name}</td>
             <td><a href="preparat/edit?id=${item.id}">Edit</a></td>

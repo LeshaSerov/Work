@@ -7,21 +7,25 @@
   <link href="/style/table.css" rel="stylesheet">
 </head>
 <body>
-<a href="preparats_pharms/addPharm">Добавить аптеку</a>
+<h2>Список аптек в которых содержится препарат: ${name}</h2>
+<a href="/">Main</a>
+<a href="pharms_of_the_preparat/add?preparatsid=${id}">Добавить аптеку</a>
 <table class="table" title="Препарат с аптеками">
   <thead>
   <tr>
     <th>ID</th>
-    <th colspan="3">Address</th>
+    <th>Address</th>
+    <th colspan="3">Count</th>
   </tr>
   </thead>
   <tbody>
   <c:forEach items="${list}" var="item">
-    <tr onclick = "location.href='preparat?id=${item.id}'" >
+    <tr onclick = "location.href='pharms'">
       <td>${item.id}</td>
       <td>${item.address}</td>
-      <td><a href="preparats_pharms/editPhram?id=${item.id}">Edit</a></td>
-      <td><a href="preparats_pharms/deletePharm?id=${item.id}">Delete</a></td>
+      <td>${item.count}</td>
+      <td><a href="pharms_of_the_preparat/edit?pharmsid=${item.id}&preparatsid=${id}">Edit</a></td>
+      <td><a href="pharms_of_the_preparat/delete?pharmsid=${item.id}&preparatsid=${id}">Delete</a></td>
     </tr>
   </c:forEach>
   </tbody>

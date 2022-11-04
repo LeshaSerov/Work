@@ -34,7 +34,7 @@ public class ServletPreparatEdit extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String name = request.getParameter("name");
         Integer id = Integer.parseInt(request.getParameter("id"));
-        CategDao.editCateg(id, name);
-        response.sendRedirect("/pharms");
+        PreparatDao.editPreparat(id, name);
+        response.sendRedirect("/preparats");
     }
 }

@@ -7,21 +7,22 @@
   <link href="/style/table.css" rel="stylesheet">
 </head>
 <body>
-<a href="preparats_categs/addPreparat">Добавить препарат</a>
+<h2>Список препаратов относящихся к категории: ${name}</h2>
+<a href="/">Main</a>
+<a href="preparats_of_the_categ/add?categsid=${id}">Добавить препарат</a>
 <table class="table" title="Категория с препаратами">
   <thead>
   <tr>
     <th>ID</th>
-    <th colspan="3">Name</th>
+    <th colspan="2">Name</th>
   </tr>
   </thead>
   <tbody>
   <c:forEach items="${list}" var="item">
-    <tr onclick = "location.href='preparat?id=${item.id}'" >
+    <tr onclick = "location.href='categs'" >
       <td>${item.id}</td>
-      <td>${item.address}</td>
-      <td><a href="preparats_categs/editPreparat?id=${item.id}">Edit</a></td>
-      <td><a href="preparats_categs/deletePreparat?id=${item.id}">Delete</a></td>
+      <td>${item.name}</td>
+      <td><a href="preparats_of_the_categ/delete?preparatsid=${item.id}&categsid=${id}">Delete</a></td>
     </tr>
   </c:forEach>
   </tbody>

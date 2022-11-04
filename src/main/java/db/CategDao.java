@@ -44,7 +44,7 @@ public class CategDao {
                 return false;
             }
         } catch (Exception exception) {
-            return null;
+            return false;
         }
     }
 
@@ -65,7 +65,7 @@ public class CategDao {
                 return false;
             }
         } catch (Exception exception) {
-            return null;
+            return false;
         }
     }
 
@@ -74,7 +74,7 @@ public class CategDao {
                 SELECT\s
                 	*
                 FROM
-                	categss
+                	categs
                 WHERE
                     categsid = ?
                 """;
@@ -85,8 +85,7 @@ public class CategDao {
                 resultSet.next();
                 return new Categ(
                         resultSet.getInt(1),
-                        resultSet.getString(2),
-                        null
+                        resultSet.getString(2)
                 );
             }
         } catch (Exception exception) {
@@ -107,8 +106,7 @@ public class CategDao {
                 while (resultSet.next()) {
                     result.add(new Categ(
                                     resultSet.getInt(1),
-                                    resultSet.getString(2),
-                                    null
+                                    resultSet.getString(2)
                             )
                     );
                 }
